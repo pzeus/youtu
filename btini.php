@@ -20,26 +20,13 @@ function readini($name)
 function write_ini_file($add_arr, $path) { 
   $content = ""; 
   $loadData=readini(INIFILENAME);
-
-  if(empty($loadData))
-  {
-    echo "ini为空<p>";
-  }
-  else
-  {
-    $assoc_arr=array_merge_recursive($loadData,$assoc_arr);
-    // $assoc_arr=array_merge($loadData,$assoc_arr);
-
-
-    foreach ($loadData as $key=>$value) { 
-      $content.=strval($key)."= \"".$value."\"\n"; 
-    } 
-
-
-    foreach ($add_arr as $key=>$value) { 
-      $content.=strval($key)."= ".$value."\n"; 
-    } 
-  }
+  $assoc_arr=array_merge_recursive($loadData,$assoc_arr);
+  foreach ($loadData as $key=>$value) { 
+    $content.=strval($key)."= \"".$value."\"\n"; 
+  } 
+  foreach ($add_arr as $key=>$value) { 
+    $content.=strval($key)."= ".$value."\n"; 
+  } 
   if (!$handle = fopen($path, 'w')) { 
     return false; 
   } 
@@ -91,10 +78,8 @@ if(@$_GET[status]=="save")
 
 if(@$_GET[status]=="del")
 {
-
   $readData=readini(INIFILENAME);
   write_ini_del_value($readData,INIFILENAME,@$_GET[id]);
-  // header("location:".BTFILENAME);
 }
 //load page
 $readData=readini(INIFILENAME);
