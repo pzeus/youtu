@@ -100,5 +100,6 @@ foreach(@$readData as $key => $value){
             </form>
           <p>注意：标题同名时会被覆盖。
 <p><a href=http://www.torrent.org.cn/>种子转换</a>
+<p><a href=https://tool.lu/urlconvert/>下载地址转换迅雷地址</a>
           </body>
         </html>
