@@ -1,5 +1,5 @@
 <?php
-	function player($file,$width="100%",$height="100%") {
+	function player($file,$width="70%",$height="70%") {
 		echo "<body bgcolor=black>";
 		echo "<center><video id=my-video src=".$file." width=".$width." height=".$height." controls></video></center>";
 		echo "</body>";
