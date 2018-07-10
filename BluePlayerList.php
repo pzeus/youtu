@@ -1,12 +1,21 @@
 <?php
-  //获取当前文件所在的绝对目录
-  $dir =  dirname(__FILE__);
-  //扫描文件夹
-  $filelist = scandir($dir);
-  //显示
+	function player($file,$width=800,$height=600) {
+		echo "<video id=my-video src=".$file." width=".$width." height=".$height." controls></video>";
+	}
+	if(@$_GET["status"]=="play")
+	{	
+		player($_GET["playfile"]); 
+		echo "<a href=BluePlayerList.php>BACK</a>";
+	}
 
-print_r($dir);
-
-print_r($filelist);
-
+  	//get dir
+  	$dir =  dirname(__FILE__);
+  	//get filelist
+  	$filelist = scandir($dir);
+  	//display filelist 
+	foreach($filelist as $key=>$value)
+	{
+		echo "<p><a href=BluePlayerList.php?status=play&playfile=".$value.">".$value."</a>";
+	}	
 ?>
+
