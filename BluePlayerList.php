@@ -18,7 +18,7 @@
 		//display filelist 
 		foreach($filelist as $key=>$value)
 		{
-			echo "<p><a href=BluePlayerList.php?status=play&playfile=".$value.">".$value."</a>";
+			echo "<br><a href=BluePlayerList.php?status=play&playfile=".$value.">".$value."</a>";
 		}
 	}
 ?>
