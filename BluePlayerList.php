@@ -4,8 +4,9 @@
   //扫描文件夹
   $filelist = scandir($dir);
   //显示
-  foreach ($filelist as $key => $value)
-  {
-    echo "<p>".$value."</p>";
-  }
+
+print_r($dir);
+
+print_r($filelist);
+
 ?>
