@@ -2,6 +2,7 @@
 	function player($file,$width="100%",$height="100%") {
 		echo "<body bgcolor=black>";
 		echo "<video id=my-video src=".$file." width=".$width." height=".$height." controls></video>";
+		echo "</body>";
 	}
 	if(@$_GET["status"]=="play")
 	{	
