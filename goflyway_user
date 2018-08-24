@@ -16,7 +16,7 @@ nohup ./goflyway -k="${passwd}" -l=":${port}" >> "${LOG}" 2>&1 &
 nohup ./goflyway -k="${passwd}" -l=":${port}" -proxy-pass="${proxy_pass}" >> "${LOG}" 2>&1 &
 
 #加CDN 端口 50000+port
-nohup ./goflyway -k="${passwd}" -l=":${port}" -proxy-pass="${proxy_pass}" >> "${LOG}" 2>&1 -answer="ws://cf_ip:50080/server_host:50080" &
+nohup ./goflyway -k="${passwd}" -l=":${port}" -proxy-pass="${proxy_pass}" -answer="ws://cf_ip:50080/server_host:50080" >> "${LOG}" 2>&1  &
 
 #例子
-./goflyway -k="a6835181" -l=":2052" -proxy-pass="http://www.sohu.com" >> "goflyway.log" 2>&1 -answer="ws://104.24.102.147:52025/blue096.tk:52025" &
+./goflyway -k="a6835181" -l=":2052" -proxy-pass="http://www.sohu.com" -answer="ws://104.24.102.147:52025/blue096.tk:52025" >> "goflyway.log" 2>&1  &
