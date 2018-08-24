@@ -1,0 +1,22 @@
+#运行参数
+/etc/init.d/goflyway start  { start | stop | restart | status }
+
+#cdn port
+80 8080 8880 2052 2082 2086 2095
+
+#参数
+port=8880
+passwd=a6835181
+proxy_pass=http://www.sohu.com
+
+#不加伪装
+nohup ./goflyway -k="${passwd}" -l=":${port}" >> "${LOG}" 2>&1 &
+
+#加伪装
+nohup ./goflyway -k="${passwd}" -l=":${port}" -proxy-pass="${proxy_pass}" >> "${LOG}" 2>&1 &
+
+#加CDN 端口 50000+port
+nohup ./goflyway -k="${passwd}" -l=":${port}" -proxy-pass="${proxy_pass}" >> "${LOG}" 2>&1 -answer="ws://cf_ip:50080/server_host:50080" &
+
+#例子
+./goflyway -k="a6835181" -l=":2052" -proxy-pass="http://www.sohu.com" >> "goflyway.log" 2>&1 -answer="ws://104.24.102.147:52025/blue096.tk:52025" &
