@@ -1,4 +1,6 @@
 <?php
+	$FILENAME=basename(__FILE__);
+
 	function player($file,$width="70%",$height="70%") {
 		echo "<body bgcolor=black>";
 		echo "<center><video id=my-video src=".$file." width=".$width." height=".$height." controls></video></center>";
@@ -7,7 +9,7 @@
 	if(@$_GET["status"]=="play")
 	{	
 		player($_GET["playfile"]); 
-		echo "<a href=BluePlayerList.php>BACK</a>";
+		echo "<a href=".$FILENAME.">BACK</a>";
 	}
 	else
 	{
@@ -18,7 +20,7 @@
 		//display filelist 
 		foreach($filelist as $key=>$value)
 		{
-			echo "<br><a href=BluePlayerList.php?status=play&playfile=".$value.">".$value."</a>";
+			echo "<br><a href=".$FILENAME."?status=play&playfile=".$value.">".$value."</a>";
 		}
 	}
 ?>
