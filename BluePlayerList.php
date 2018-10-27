@@ -2,11 +2,20 @@
 	$FILENAME=basename(__FILE__);
 
 	function player($file,$width="70%",$height="70%") {
-		echo "<body bgcolor=black>";
-
+		echo "<body bgcolor=black>";	
 		echo "<center><video id=myvideo src=".$file." width=".$width." height=".$height." controls></video></center>";
-		echo "<p><button onclick=setPlaySpeed() type=button>将视频设置为以快速播放</button></p>";
+		
+		echo "<button onclick=myvideo.playbackRate=1; type=button >1.0X</button>";
+		echo "<button onclick=myvideo.playbackRate=1.25; type=button>1.25</button>";
+		echo "<button onclick=myvideo.playbackRate=1.5; type=button>1.5</button>";
+		echo "<button onclick=myvideo.playbackRate=2; type=button>2.0</button>";
+		echo "<button onclick=myvideo.playbackRate=2.5; type=button>2.5</button>";
+		echo "<button onclick=myvideo.playbackRate=3.0; type=button>3.0</button>";
+		
+		
+		echo "</p>";
 		echo "</body>";
+
 	}
 	if(@$_GET["status"]=="play")
 	{	
