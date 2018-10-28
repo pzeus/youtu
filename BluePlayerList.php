@@ -1,7 +1,7 @@
 <?php
 	$FILENAME=basename(__FILE__);
 
-	function player($file,$width="100%",$height="100%") {
+	function player($file,$width="90%",$height="90%") {
 		echo "<body bgcolor=black>";	
 		echo "<center><video id=myvideo src=".$file." width=".$width." height=".$height." controls></video></center>";
 		
